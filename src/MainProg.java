@@ -65,7 +65,7 @@ public class MainProg extends JFrame{
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 688, 330);
+		frame.setBounds(100, 100, 718, 328);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -110,14 +110,14 @@ public class MainProg extends JFrame{
 		frame.getContentPane().add(OK);
 		
 		JScrollPane Podglad_bony = new JScrollPane();
-		Podglad_bony.setBounds(180, 11, 490, 91);
+		Podglad_bony.setBounds(180, 11, 522, 91);
 		frame.getContentPane().add(Podglad_bony);
 		
 		
 		JScrollPane Podglad_bramka = new JScrollPane();
 		Podglad_bramka = new JScrollPane();
 		frame.getContentPane().add(Podglad_bramka);
-		Podglad_bramka.setBounds(180, 107, 490, 86);
+		Podglad_bramka.setBounds(180, 107, 522, 86);
 		
 		JButton Odswiez_bramka = new JButton("odswiez");
 		Odswiez_bramka.addActionListener(new ActionListener() {
@@ -130,7 +130,7 @@ public class MainProg extends JFrame{
 				}
 			}
 		});
-		Odswiez_bramka.setBounds(587, 224, 83, 23);
+		Odswiez_bramka.setBounds(619, 204, 83, 23);
 		frame.getContentPane().add(Odswiez_bramka);
 		
 		JButton Dodaj_wejscie = new JButton("Dodaj wejscie");
@@ -196,7 +196,7 @@ public class MainProg extends JFrame{
 				
 			}
 		});
-		Zmien_wejscie.setBounds(301, 204, 113, 23);
+		Zmien_wejscie.setBounds(301, 204, 130, 23);
 		frame.getContentPane().add(Zmien_wejscie);
 		
 		JButton Usun_wejscie = new JButton("Usun wej/wyj");
@@ -224,7 +224,7 @@ public class MainProg extends JFrame{
 			
 			}
 		});
-		Usun_wejscie.setBounds(424, 204, 113, 23);
+		Usun_wejscie.setBounds(441, 204, 113, 23);
 		frame.getContentPane().add(Usun_wejscie);
 		
 		JButton Dodaj_wyjscie = new JButton("Dodaj wyjscie");
@@ -464,6 +464,9 @@ public class MainProg extends JFrame{
 	
 	public boolean CheckDataa(String data)
 	{
+		
+		System.out.println("dlugosc daty:" + data.length());
+		
 		boolean okej = false;
 		
 		// musza byc!
@@ -478,8 +481,11 @@ public class MainProg extends JFrame{
 
 		if(minus1 == '-' && minus2 == '-' && char0 == '2' && char1 == '0' )
 		{
-			if((char5 == '1' || char5 == '0' ) && ( char8 >=0  || char8 < 4))			
+			if((char5 == '1' || char5 == '0' ) && ( char8 >=0  || char8 < 4))	
+			{
+				if(data.length() == 10)
 				okej  = true;		
+			}
 		}
 
 		return okej;
